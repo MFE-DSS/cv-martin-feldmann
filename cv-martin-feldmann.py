@@ -185,13 +185,12 @@ def build(out_path: str) -> None:
     # ── About ──
     story.append(Paragraph("ABOUT", section))
     story.append(Paragraph(
-        "I started in econometrics — time series, regression, model diagnostics — and ended up spending most of the last six years "
-        "making sure data science work actually runs in production. That means pipelines that don't break at 2 a.m., "
-        "CI/CD that catches regressions before they reach users, and teams that know what 'done' looks like. "
+        "I started in econometrics, time series, regression, model diagnostics and ended up spending most of the last six years "
+        "making sure data science work actually runs in production."
+        "CI/CD that catches regressions before they reach production"
         "I've done this at scale (Rolex: 100+ developers, hundreds of active projects) and from scratch "
         "(Orange: built reusable components from the ground up). "
-        "Right now I'm interested in analytics roles closer to markets — energy, commodities, structured products — "
-        "where the econometrics background is actually useful, not just decorative.",
+        "Right now I'm interested in analytics roles closer to markets energy, commodities, macro analysis & econometric engineering", 
         base,
     ))
 
@@ -200,12 +199,11 @@ def build(out_path: str) -> None:
     skills_left = [
         "<b>Econometrics / Forecasting</b> — time series, regression, ARIMA, model diagnostics, scenario framing",
         "<b>Python</b> — OOP, pandas, numpy, PySpark, SQL; reproducible pipelines from prototype to prod",
-        "<b>CI/CD &amp; Delivery</b> — GitLab CI, GitHub Actions, release runbooks, Definition-of-Done templates",
+        "<b>CI/CD &amp; Delivery</b> — GitLab CI, GitHub Actions, Definition-of-Done templates",
     ]
     skills_right = [
-        "<b>Infra</b> — Docker, Kubernetes, Control-M; containerized workloads, scheduling, smoke tests",
-        "<b>Observability</b> — Prometheus, Grafana; log structure, alert rules, incident response basics",
-        "<b>Risk literacy</b> — exposure framing, drawdown/vol concepts, scenario thinking",
+        "<b>Infra</b> — Docker, Kubernetes, Orchestrators; containerized workloads, scheduling, smoke tests",
+        "<b>Observability</b> — Monitorings, Prometheus, Grafana; log structure, alert rules, incident response basics",
     ]
     skills_table = Table(
         [[Paragraph("• " + s, base), Paragraph("• " + s2, base)] for s, s2 in zip(skills_left, skills_right)],
@@ -227,9 +225,8 @@ def build(out_path: str) -> None:
         "Apr 2024 – Present  •  Geneva",
         [
             "Own the full delivery lifecycle for analytics and ML projects: scoping, pipeline design, packaging, deployment and post-go-live monitoring.",
-            "Built a Python deployment toolkit (build, smoke test, integration test, rollout) that cut release time by roughly half across client engagements.",
-            "Act as technical referent for other teams: versioning conventions, project templates, Definition-of-Done checklists — the kind of stuff that prevents last-minute surprises.",
-            "Set up Prometheus/Grafana dashboards and alert rules so production runs fail loudly instead of silently.",
+            "Built a Python deployment toolkit (build, smoke test, integration test, rollout)",
+            "Act as technical referent for other teams: Data Science Platform Engineering",
         ],
     ))
     story.append(rb(
@@ -237,22 +234,22 @@ def build(out_path: str) -> None:
         "Apr 2024 – Dec 2025  •  Geneva",
         [
             "Embedded in a large enterprise Data Science platform: 100+ developers, hundreds of projects across integration and production environments.",
-            "Standardized delivery patterns for ~20 orchestrated production workloads — runbooks, packaging conventions, CI/CD templates.",
+            "Standardized delivery patterns for ~20 orchestrated production workloads, packaging conventions, CI/CD templates.",
             "Supported containerized deployments (Docker/K8s) and Control-M scheduling; added monitoring and alerting for scheduled jobs.",
             "Regular knowledge-sharing sessions with data scientists to close the gap between prototyping habits and production requirements.",
         ],
     ))
     story.append(rb(
-        "Orange", "Tech Lead — Data Platform (Analytics / AI)",
+        "Orange - Finance Group", "Tech Lead — Data Platform (Analytics / AI)",
         "Mar 2022 – Apr 2024  •  France",
         [
             "Led analytics programs end-to-end: translated business problems into scoped delivery with clear reliability requirements.",
             "Built internal tooling and reusable components; ran workshops to get teams aligned on shared practices.",
-            "Hands-on across the stack — data ingestion, model training, API delivery, monitoring.",
+            "Hands-on across the stack : data ingestion, model training, API delivery, monitoring.",
         ],
     ))
     story.append(rb(
-        "Orange", "Python Developer — Data Pipelines",
+        "Orange France - Method Tools Innovation", "Python Developer — Data Pipelines",
         "Jan 2020 – Mar 2022  •  Paris",
         [
             "Built and optimized data pipelines in Python, PySpark, SQL and Hive; migrated legacy analytics workloads from SAS.",
@@ -264,6 +261,7 @@ def build(out_path: str) -> None:
         "Sep 2018 – Sep 2019  •  Arcueil",
         [
             "Developed time series forecasting and KPI regression models for decision-support.",
+            "Developed Econometrics applied models.",
             "Master's thesis: sentiment analysis / NLP on telecom customer data.",
         ],
     ))
