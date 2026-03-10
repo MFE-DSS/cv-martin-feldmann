@@ -185,9 +185,8 @@ def build(out_path: str) -> None:
     # ── About ──
     story.append(Paragraph("ABOUT", section))
     story.append(Paragraph(
-        "I started in econometrics, time series, regression, model diagnostics and ended up spending most of the last six years "
+        "I started in econometrics and machine learning, model diagnostics and ended up spending most of the last six years "
         "making sure data science work actually runs in production."
-        "CI/CD that catches regressions before they reach production"
         "I've done this at scale (Rolex: 100+ developers, hundreds of active projects) and from scratch "
         "(Orange: built reusable components from the ground up). "
         "Right now I'm interested in analytics roles closer to markets energy, commodities, macro analysis & econometric engineering", 
@@ -278,8 +277,8 @@ def build(out_path: str) -> None:
 
     story.append(Spacer(1, 3))
     story.append(Paragraph(
-        "<b>Stack</b>: Python · pandas/numpy · PySpark · SQL · GitLab CI · GitHub Actions · "
-        "Docker · Kubernetes · Prometheus · Grafana · Control-M · Azure · GCP · JIRA · Confluence",
+        "<b>Stack</b>: Econometrics · Python · OOP · ML · SQL · GitHub CI/Actions · "
+        "Docker · Kubernetes · Prometheus · Grafana · Azure/AWS/GCP · JIRA · Confluence",
         kw,
     ))
 
