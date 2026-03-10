@@ -125,26 +125,20 @@ def build(out_path: str) -> None:
     # ── Corps ──
     paragraphs = [
         (
-            "Je m'appelle Martin Feldmann. Je suis data scientist de formation économétrique, "
+            "Je m'appelle Martin Feldmann. Je suis data scientist de formation économétricien et macro-économiste, "
             "et je travaille depuis six ans à faire en sorte que des modèles Python finissent en production "
-            "plutôt que dans un notebook oublié. C'est un peu ma spécialité."
         ),
         (
-            "Mon parcours est un peu atypique : j'ai commencé par la théorie — séries temporelles, régressions, "
-            "diagnostics de modèles — et je me suis retrouvé à passer la majorité de mon temps "
+            "Mon parcours est un peu atypique : j'ai commencé par la théorie, séries temporelles, régressions, "
+            "diagnostics de modèles et je me suis retrouvé à passer la majorité de mon temps "
             "sur des pipelines CI/CD, de la conteneurisation et de l'observabilité. "
             "Chez Rolex, j'étais embarqué dans une plateforme avec plus de cent développeurs et "
-            "des centaines de projets actifs. Chez Orange avant ça, j'ai reconstruit des flux analytiques "
-            "entiers depuis SAS vers Python. Dans les deux cas, l'enjeu n'était pas de faire tourner "
-            "un modèle une fois — c'était de le faire tenir dans le temps."
+            "des centaines de projets actifs en tant que Lead Technique pour la mise en production."
         ),
         (
             "Ce qui m'intéresse maintenant, c'est de ramener la partie économétrique au centre. "
-            "Les marchés — énergie, commodités, produits structurés — sont des environnements où "
-            "la rigueur quantitative compte vraiment, pas juste comme décoration sur un slide. "
+            "Les marchés, l'analyse macro-economique, l'énergie, commodités, et la modélisation avancée sont des environnements où "
             "J'ai envie de travailler sur des problèmes où le modèle a des conséquences directes, "
-            "et où quelqu'un dans la salle peut effectivement expliquer pourquoi la variance d'une erreur de prévision "
-            "a de l'importance."
         ),
         (
             "Je suis autonome, j'apprends vite sur les domaines métier, et je sais communiquer "
