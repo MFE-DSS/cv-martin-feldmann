@@ -1,0 +1,38 @@
+name: Build CV & Cover Letter PDFs
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:          # déclenchement manuel depuis l'onglet Actions
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install --upgrade pip && pip install -r requirements.txt
+
+      - name: Build CV PDF
+        run: python3 cv-martin-feldmann.py --output-dir ./output
+
+      - name: Build Cover Letter PDF
+        run: python3 lettre-motivation.py --output-dir ./output
+
+      - name: Upload PDFs as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: feldmann-pdfs-${{ github.sha }}
+          path: output/*.pdf
+          retention-days: 90   # conservé 90 jours, téléchargeable depuis l'onglet Actions

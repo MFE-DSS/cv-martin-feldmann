@@ -30,11 +30,18 @@ from reportlab.platypus import (
 
 # ── CLI / Env ────────────────────────────────────────────────────────────────
 def _default_output_dir() -> str:
-    """~/Desktop/CV sur macOS/Windows/Linux."""
-    return os.environ.get(
-        "CV_OUTPUT_DIR",
-        os.path.join(os.path.expanduser("~"), "Desktop", "CV"),
-    )
+    """Détecte automatiquement le bon dossier de sortie selon l'environnement.
+
+    Priorité :
+    1. $CV_OUTPUT_DIR  (variable d'env explicite)
+    2. ./output        (CI : GitHub Actions, GitLab CI, etc.)
+    3. ~/Desktop/CV    (usage local macOS / Windows / Linux)
+    """
+    if os.environ.get("CV_OUTPUT_DIR"):
+        return os.environ["CV_OUTPUT_DIR"]
+    if os.environ.get("CI"):
+        return os.path.join(os.path.dirname(os.path.abspath(__file__)), "output")
+    return os.path.join(os.path.expanduser("~"), "Desktop", "CV")
 
 
 def _parse_args() -> argparse.Namespace:
