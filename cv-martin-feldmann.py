@@ -177,7 +177,7 @@ def build(out_path: str) -> None:
         subtitle,
     ))
     story.append(Paragraph(
-        "martinfeldmann34@gmail.com  |  github.com/MFE-DSS  |  linkedin.com/in/martin-paul-feldmann",
+        "martin.paul.feldmann@gmail.com  |  github.com/MFE-DSS  |  linkedin.com/in/martin-paul-feldmann | +41 78 247 24 38",
         small,
     ))
     story.append(make_hr(doc.width))
