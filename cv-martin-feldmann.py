@@ -173,7 +173,7 @@ def build(out_path: str) -> None:
     # ── En-tête ──
     story.append(Paragraph("MARTIN FELDMANN", titlestyle))
     story.append(Paragraph(
-        "Data Scientist &amp; Applied Economist  •  Python pipelines, CI/CD &amp; delivery  •  Geneva",
+        "Data Scientist Platform Engineer  •  Python pipelines, CI/CD &amp; delivery  •  Geneva",
         subtitle,
     ))
     story.append(Paragraph(
@@ -185,86 +185,100 @@ def build(out_path: str) -> None:
     # ── About ──
     story.append(Paragraph("ABOUT", section))
     story.append(Paragraph(
-        "I started in econometrics and machine learning, model diagnostics and ended up spending most of the last six years "
+        "I started in econometrics and machine learning and ended up spending most of the last six years "
         "making sure data science work actually runs in production."
         "I've done this at scale (Rolex: 100+ developers, hundreds of active projects) and from scratch "
-        "(Orange: built reusable components from the ground up). "
-        "Right now I'm interested in analytics roles closer to markets energy, commodities, macro analysis & econometric engineering", 
-        base,
+        "Orange Telecom end-to-end use case deployment framework."
+        ,
     ))
+  # ── Skills ──
+  story.append(Paragraph("SKILLS", section))
+  skills_left = [
+      "<b>Python (Engineering &amp; Data)</b> — OOP, pandas/numpy; production-friendly scripts/services; packaging and reproducible runs",
+      "<b>Data Modeling &amp; SQL</b> — relational modeling, Spark SQL queries, data reliability and validation checks",
+      "<b>SDLC / Delivery</b> — Git (PRs, code reviews), Definition-of-Done checklists, release, production change validation",
+  ]
+  skills_right = [
+      "<b>Web / APIs (practical)</b> — API validation, integration patterns for internal tools",
+      "<b>Infra &amp; Operations</b> — Docker, Kubernetes, scheduling/orchestration; smoke tests; runbooks; logs/metrics/alert rules (Prometheus/Grafana)",
+  ]
+  skills_table = Table(
+      [[Paragraph("• " + s, base), Paragraph("• " + s2, base)] for s, s2 in zip(skills_left, skills_right)],
+      colWidths=[doc.width * 0.5, doc.width * 0.5],
+  )
+  skills_table.setStyle(TableStyle([
+      ("VALIGN",        (0, 0), (-1, -1), "TOP"),
+      ("LEFTPADDING",   (0, 0), (-1, -1), 0),
+      ("RIGHTPADDING",  (0, 0), (-1, -1), 6),
+      ("TOPPADDING",    (0, 0), (-1, -1), 0),
+      ("BOTTOMPADDING", (0, 0), (-1, -1), 1),
+  ]))
+  story.append(skills_table)
+  
+  # ── Expérience ──
+  story.append(Paragraph("EXPERIENCE", section))
+  story.append(rb(
+      "Ivy Partners SA", "Lead — Data Science Platform Engineering (Consulting)",
+      "Apr 2024 – Present  •  Geneva",
+      [
+          "Led delivery for data/analytics initiatives in enterprise contexts: scoping, solution design, validation steps, and production readiness.",
+          "Served as technical interface across stakeholders (data teams &amp; central IT): deployment process, environment constraints, release coordination.",
+          "Built reusable delivery assets (project templates, Definition-of-Done checklists, CI gates) to standardize quality and accelerate execution across projects.",
+      ],
+  ))
+  story.append(rb(
+      "Rolex", "Data Science Platform Engineering — Consultant via Ivy Partners",
+      "Apr 2024 – Dec 2025  •  Geneva",
+      [
+          "Embedded in a large platform context (100+ developers; hundreds of projects across integration and production environments).",
+          "Industrialized delivery for ~20 orchestrated production workloads: packaging conventions, release checklists (DoD), and production validation steps.",
+          "Contributed to a Python-based deployment framework: build image, smoke tests, integration tests (data validation / contract checks / non-regression), controlled rollout to production.",
+          "Supported containerized deployments (Docker/K8s) and scheduling (Control-M); added logs/metrics/alert rules and dashboards (Dataiku) for scheduled jobs.",
+      ],
+  ))
+  story.append(rb(
+      "Orange - Finance Group", "Tech Lead — Data Platform (Analytics / AI)",
+      "Mar 2022 – Apr 2024  •  France",
+      [
+          "Tech lead for data/analytics programs: translated business needs into scoped technical delivery with reliability, validation, and deployment requirements.",
+          "Built reusable components and internal applications to operationalize analytics for business teams; ensured maintainability and clear ownership.",
+          "Ran workshops to align teams on shared delivery standards (data quality checks, reproducibility routines, deployment practices).",
+      ],
+  ))
+  story.append(rb(
+      "Orange France - Method Tools Innovation", "Python Developer — Data &amp; Analytics Pipelines",
+      "Jan 2020 – Mar 2022  •  Paris",
+      [
+          "Built and optimized data pipelines in Python, PySpark, SQL and Hive; participated in migration of legacy analytics workloads from SAS.",
+          "Implemented data validation checks and reliability routines for scheduled production runs; performance-oriented SQL and scalable transformations.",
+      ],
+  ))
+  story.append(rb(
+      "Orange", "Junior Data Scientist — Analytics (Apprenticeship)",
+      "Sep 2018 – Sep 2019  •  Arcueil",
+      [
+          "Built analytics models and KPIs for decision support; contributed to data preparation and validation steps around model delivery.",
+          "Master's thesis: sentiment analysis / NLP on telecom customer data.",
+      ],
+  ))
 
-    # ── Skills ──
-    story.append(Paragraph("SKILLS", section))
-    skills_left = [
-        "<b>Econometrics / Forecasting</b> — time series, regression, ARIMA, model diagnostics, scenario framing",
-        "<b>Python</b> — OOP, pandas, numpy, PySpark, SQL; reproducible pipelines from prototype to prod",
-        "<b>CI/CD &amp; Delivery</b> — GitLab CI, GitHub Actions, Definition-of-Done templates",
-    ]
-    skills_right = [
-        "<b>Infra</b> — Docker, Kubernetes, Orchestrators; containerized workloads, scheduling, smoke tests",
-        "<b>Observability</b> — Monitorings, Prometheus, Grafana; log structure, alert rules, incident response basics",
-    ]
-    skills_table = Table(
-        [[Paragraph("• " + s, base), Paragraph("• " + s2, base)] for s, s2 in zip(skills_left, skills_right)],
-        colWidths=[doc.width * 0.5, doc.width * 0.5],
-    )
-    skills_table.setStyle(TableStyle([
-        ("VALIGN",        (0, 0), (-1, -1), "TOP"),
-        ("LEFTPADDING",   (0, 0), (-1, -1), 0),
-        ("RIGHTPADDING",  (0, 0), (-1, -1), 6),
-        ("TOPPADDING",    (0, 0), (-1, -1), 0),
-        ("BOTTOMPADDING", (0, 0), (-1, -1), 1),
-    ]))
-    story.append(skills_table)
+# ── Formation ──
+story.append(Paragraph("EDUCATION", section))
+for line in [
+    "<b>MSc Data Science</b> — Université Paris-Est Créteil, 2018–2019",
+    "<b>MSc Statistics &amp; Econometrics</b> — UPEC, 2017–2018 — project: regression-based forecasting of German GFCF (2018)",
+    "<b>BSc Economics</b> — Université de Montpellier, 2014–2017",
+    "<b>Big Data training</b> — Hadoop / Spark / HBase (2023)  •  French (native), English (C1)",
+]:
+    story.append(Paragraph(line, base))
 
-    # ── Expérience ──
-    story.append(Paragraph("EXPERIENCE", section))
-    story.append(rb(
-        "Ivy Partners SA", "AI / Data Science Lead — Consulting",
-        "Apr 2024 – Present  •  Geneva",
-        [
-            "Own the full delivery lifecycle for analytics and ML projects: scoping, pipeline design, packaging, deployment and post-go-live monitoring.",
-            "Built a Python deployment toolkit (build, smoke test, integration test, rollout)",
-            "Act as technical referent for other teams: Data Science Platform Engineering",
-        ],
-    ))
-    story.append(rb(
-        "Rolex", "AI &amp; Data Science Enablement — Consultant via Ivy Partners",
-        "Apr 2024 – Dec 2025  •  Geneva",
-        [
-            "Embedded in a large enterprise Data Science platform: 100+ developers, hundreds of projects across integration and production environments.",
-            "Standardized delivery patterns for ~20 orchestrated production workloads, packaging conventions, CI/CD templates.",
-            "Supported containerized deployments (Docker/K8s) and Control-M scheduling; added monitoring and alerting for scheduled jobs.",
-            "Regular knowledge-sharing sessions with data scientists to close the gap between prototyping habits and production requirements.",
-        ],
-    ))
-    story.append(rb(
-        "Orange - Finance Group", "Tech Lead — Data Platform (Analytics / AI)",
-        "Mar 2022 – Apr 2024  •  France",
-        [
-            "Led analytics programs end-to-end: translated business problems into scoped delivery with clear reliability requirements.",
-            "Built internal tooling and reusable components; ran workshops to get teams aligned on shared practices.",
-            "Hands-on across the stack : data ingestion, model training, API delivery, monitoring.",
-        ],
-    ))
-    story.append(rb(
-        "Orange France - Method Tools Innovation", "Python Developer — Data Pipelines",
-        "Jan 2020 – Mar 2022  •  Paris",
-        [
-            "Built and optimized data pipelines in Python, PySpark, SQL and Hive; migrated legacy analytics workloads from SAS.",
-            "Automated data quality checks and performance monitoring for scheduled production runs.",
-        ],
-    ))
-    story.append(rb(
-        "Orange", "Junior Data Scientist — Applied Econometrics / NLP (Apprenticeship)",
-        "Sep 2018 – Sep 2019  •  Arcueil",
-        [
-            "Developed time series forecasting and KPI regression models for decision-support.",
-            "Developed Econometrics applied models.",
-            "Master's thesis: sentiment analysis / NLP on telecom customer data.",
-        ],
-    ))
-
+story.append(Spacer(1, 3))
+story.append(Paragraph(
+    "<b>Stack</b>: Python (OOP) · SQL · PySpark · Relational DBs · Git (Version Control) · "
+    "GitLab CI / GitHub Actions · Docker · Kubernetes · Prometheus · Grafana · Control-M · "
+    "Swagger (API validation) · JIRA · Confluence · AZUR/AWS/GCP (exposure)",
+    kw,
+))
     # ── Formation ──
     story.append(Paragraph("EDUCATION", section))
     for line in [
